@@ -1,0 +1,16 @@
+有朋友问我，既然已经有了Adblock(Plus)之类的插件，为什么还要创作它。但当面对流氓网络提供商（如中国电信）插入各种广告代码时，你便需要它了。
+
+源代码：https://github.com/xieweiking/anti-ads-hijacking
+（上面还有我搜集的ads_hosts，不懂如何使用的请直接使用Adblock插件）
+
+
+有朋友問我，既然已經有了Adblock(Plus)之類的程式，為什麼還要創作它。但當面對流氓網絡提供商（如中國電信）插入各種廣告代碼時，你便需要它了。
+
+源代碼：https://github.com/xieweiking/anti-ads-hijacking
+（上面還有我蒐集的ads_hosts，不懂如何使用的請直接使用Adblock插件）
+
+
+When you are suffering the website ads-hijacking in China (especially in the China Telecom network), but Adblock(Plus) doesn't work, you'll need it.
+
+Source code: https://github.com/xieweiking/anti-ads-hijacking
+(And there is an ads_hosts file, light-user can just ignore it)

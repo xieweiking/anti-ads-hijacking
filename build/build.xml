@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="anti-ads-hijacking" default="build">
+    <property name="version" value="0.0.1" />
+    <property name="target_dir" value="./target" />
+    <property name="locales_dir" value="${target_dir}/_locales" />
+    <property name="script_dir" value="${target_dir}/script" />
+    <property name="image_dir" value="${target_dir}/image" />
+
+    <path id="yui_classpath">
+        <fileset dir="./lib">
+            <include name="yuicompressor-2.4.7.jar" />
+            <include name="YUIAnt.jar" />
+        </fileset>
+    </path>
+
+    <target name="copy">
+        <copy todir="${locales_dir}">
+            <fileset dir="../_locales" />
+        </copy>
+        <copy todir="${image_dir}">
+            <fileset dir="../image" />
+        </copy>
+        <copy file="../manifest.json" todir="${target_dir}" />
+        <copy file="../LICENSE" todir="${target_dir}" />
+    </target>
+
+    <target name="compress">
+        <taskdef name="yuicompress" classname="com.yahoo.platform.yui.compressor.YUICompressTask">
+            <classpath>
+                <path refid="yui_classpath" />
+            </classpath>
+        </taskdef>
+        <yuicompress munge="yes" warn="true" outputFolder="${script_dir}" charset="UTF-8">
+            <fileset dir="../script">
+                <include name="**/*.js" />
+                <exclude name="**/*.min.js" />
+                <exclude name="**/*-min.js" />
+            </fileset>
+        </yuicompress>
+    </target>
+
+    <target name="zip">
+        <zip destfile="anti-ads-hijacking_${version}.zip">
+            <fileset dir="${target_dir}" />
+        </zip>
+    </target>
+
+    <target name="build">
+        <mkdir dir="${target_dir}" />
+        <ant target="copy" />
+        <ant target="compress" />
+        <ant target="zip" />
+        <delete dir="${target_dir}" />
+    </target>
+</project>
