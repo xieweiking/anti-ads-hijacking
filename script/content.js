@@ -13,9 +13,11 @@
         var iframes, i, url;
         iframes = document.getElementsByTagName('iframe');
         for (i = 0; i < iframes.length; ++i) {
-            url = iframes[i].src;
+            // NOTE: can NOT use '.src' accessor, 'cause chrome will expand it when it's empty.
+            url = iframes[i].getAttribute('src');
             if (url != '' && (href + '?' == url || href + ';' == url || href + '#' == url || href == url)) {
                 stop_check();
+                console.log('HIJACK!!!');
                 location.reload();
                 break;
             }
