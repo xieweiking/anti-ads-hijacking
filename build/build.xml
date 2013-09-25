@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <project name="anti-ads-hijacking" default="build">
-    <property name="version" value="0.0.2" />
+    <property name="version" value="0.0.3" />
     <property name="target_dir" value="./target" />
     <property name="locales_dir" value="${target_dir}/_locales" />
     <property name="script_dir" value="${target_dir}/script" />
