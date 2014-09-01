@@ -23,6 +23,6 @@
             }
         }
     }
-    intrvl_id = setInterval(check_iframe_hijack, 400);
+    intrvl_id = setInterval(check_iframe_hijack, 600);
     window.addEventListener('load', stop_check);
 })();
